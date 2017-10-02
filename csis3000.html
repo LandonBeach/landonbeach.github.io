@@ -1,0 +1,150 @@
+<details>
+  <summary>Week 1</summary>
+  <ol>
+      <li>Write a program that, given a positive integer n, prints out all the subsets of {1,2,...,n}.</li>
+      <li>Write a method that, given positive integer n prints all the primes less than or equal to n.</li>
+      <li>Using the method from #2 how long does it take to compute the primes < 10,000, 100,000 and 1 million?</li>
+      <li>By hand, compute the gcd of these pairs: (15,35), (0,111), (-12, 18), (99,100) and (252, 198).</li>
+      <li>Write a BigInteger version of the Euclid algorithm. Test this on 10 pairs of random ints of approx.. 512 bits.</li>
+  </ol>
+</details>
+
+<details>
+  <summary>Week 2</summary>
+  <ol>
+    <li>Find the least non-negative residue mod 13 of these integers: 22, 100, 1001, -1, -100, -1000, 2^20 and 2^30.</li>
+    <li>Construct tables of addition and mult. Mod 8.</li>
+    <li>What times does a clock read:</li>
+    <ul>
+        <li>29 hours after it reads 11:00</li>
+        <li>100 hours after it reads 2:00</li>
+        <li>50 hours before it reads 6:00</li>
+    </ul>
+    <li>Find the least positive residue of 3^10 mod 11, 2^12 mod 13, 5^16 mod 17, 3^22 mod 23. Do you detect a pattern?</li>
+        <ul><li>Work through the Khan Academy section on Modular arithmetic.</li></ul>
+    <li>Write out the complete multiplication tables for Z15*, Z24* and Z20*.</li>
+    <li>Draw the corresponding cycle graph for the elements in Z15*, Z21* and Z24* and Z17*.</li>
+    <li>Use gcd to find and print the group of units modulo n for n = 5 to 100. Print them out in this format:</li>
+        <ul><li>Ex. n = 8: GroupOfUnitsMod 8 = {1,3,5,7}. Also include the number of elements. (This equals phi(n)).</li></ul>
+    <li>When you look at the number of elements, do you notice any patterns? In particular, what happens when n is prime?</li>
+         <ul><li>What happens when n is the product of two primes?</li></ul>
+    <li>For all primes p,q = 2,3,5,7,11,13,17,19,23 and 29 verify that phi(p) = p-1, (there are 10 cases)</li>
+        <ul><li>phi(pq) = (p-1)*(q-1) (there are 45 cases), p and q different.</li></ul>
+    <li>Find the order of all elements in the group of units mod 7, 11 and 15.</li>
+    <li>Use your answers in exercise above to find the inverses of each element.</li>
+  </ol>
+</details>
+
+<details>
+  <summary>Week 3</summary>
+  <ol>
+    <li>Compute a table of the following values for the group of units mod 7, 11, and 15.</li>
+        <ul><li>Element, inverse, order and test Fermat's theorem (pass or not), for each element in the group.</li></ul>
+    <li>For all integers n in the range [2, 1000] compute 2^(n-1) mod n. How many primes did it detect? How many composites did it detect?</li>
+    <li>For n from 5 to 1000: compute this ratio:</li>
+        <ul><li>(# of a's in {1,2,3 …, n-1} that pass Fermat's Test)/(n-1). In every case, it should detect a prime. Does it?. When n is composite (product of 2 or more primes), verify that the ratio is <= 1/2 (except in one case: which case).</li></ul>
+    <li>Use Euler's theorem and pencil and paper to find the least positive residue of 3^1000000 mod 35.</li>
+    <li>Use Euler's theorem and pencil and paper to find the last digit of 7^1000.</li>
+    <li>Using the (slow) algorithm you wrote in class to compute these numbers and time how long it takes:</li>
+    <ul>
+        <li>123456789^123456789</li>
+        <li>123456789^1234567890</li>
+        <li>123456789^12345678901</li>
+        <li>Mod 987654321.</li>
+    </ul>
+    <li>Write a BigInteger version of fast ModularExponentiation. Test it with 5 different cases using random BigIntegers on 1024 bits for base, exponent and modulus. The speedup over the naive algorithm should be roughly 10^300 to 1. Explain why.</li>
+  </ol>
+</details>
+
+<details>
+  <summary>Week 4</summary>
+  <ol>
+    <li>Add the primetest code as a function to utilities.</li>
+    <li>Write a gp function called eulerphilist(n) that prints a list of the euler phi function fro I = 2 to n. Ad to utilities.</li>
+    <li>Write a gp function called inverse(a,n) that computes the inverse of a in the group of units mod n. It should be able to detect an a that is not in the group. Add to utilities.</li>
+    <li>Simulate the Rabin-Miller process as follows:</li>
+    <ul>
+      <li>Generate a random BigInteger n with approx. 1024 bits for the modulus. This is the number we are testing for primality.</li>
+      <li>Generate a random BigInteger a with approx. 1024 bits for the base. Make sure it is less than n.</li>
+      <li>Verify a is coprime to n. If not, n is composite.</li>
+      <li>Now run the Fermat test on on a. If it fails, n is composite. Add 1 to n and go to step B.</li>
+      <li>Repeat this process (selecting new a's every time) until n passes the test 100 times in succession. The n you now have is very probably prime.</li>
+    </ul>
+    <li>Test the following constructors and methods of the BigInteger class:</li>
+      <ol>
+        <li>Constructors: let p = a BigInteger of bitlength 512, which is probably prime. Also construct random integers a,b, and n of bitlength 512 each.</li>
+        <li>Use the above to illustrate these methods:</li>
+        <ul>
+          <li>a+b</li>
+          <li>the bitlength of n</li>
+          <li>determine which of a and b is bigger</li>
+          <li>a/b</li>
+          <li>test if p is probably prime</li>
+          <li>a mod n</li>
+          <li>a^-1 mod n</li>
+          <li>a^b mod n</li>
+          <li>a*b mod n</li>
+          <li>the next prime after p</li>
+          <li>q = 'a probable prime of bit length 512' (not using a constructor</li>
+        </ul>
+      </ol>
+  </ol>
+</details>
+
+<details>
+  <summary>Week 5</summary>
+  <ol>
+    <li>Write out the entire plain text message for the text given in class. Then encrypt it using the public key and the conversion to numbers scheme given in class (PULIC KEY CRYPTOGRAPHY)</li>
+    <li>Verify that 937 is the inverse of 13 mod phi(2537).</li>
+    <li>Decode the entire message using the exponent 937.</li>
+    <li>Pick your own exponent bigger than 40, and repeat the above.</li>
+    <li>Generage two primes around 512 bits each such that the product is exactly 300 decimal digits.</li>
+  </ol>
+</details>
+
+<details>
+  <summary>Week 6 - 7</summary>
+    <ol><li>Prepare your presentation on RSA encryption</li></ol>
+</details>
+
+<details>
+  <summary>Week 8</summary>
+  <ol>
+    <li>Use Trotter's algorithm to generate by hand all the permutations of {1,2,3,4}. Verify your results.</li>
+    <li>Use Trotter's algorithm to generate by hand the first 30 permutations of {1,2,3,4,5}. Verify all are distinct.</li>
+    <li>Give a list of the number of permutations of n things for n=1 to n=100. Is it feasible to run through all the permuations of 100 things to solve a problem? Give reasons.</li>
+  </ol>
+</details>
+
+<details>
+  <summary>Week 11</summary>
+  <ol>
+    <li>Use the quick sort algorithm to sort by hand the following integer sequence. Draw a picture of every step in the process.</li>
+      <ul><li>50 12 59 10 74 41 80 55 17 40 90 95 30 31 9 51</li></ul>
+    <li>Show by hand how the Boyer-Moore algorithm would locate the pattern "Spring" in the end of term projects pdf on the G: drive. Repeat the pattern "the first person"</li>
+    <li>Find the Huffman encoding for compressing the data file with the symbol frequencies given in class.</li>
+    <li>Compute the compression ratio over using ascii encoding. (Hint: 146/464 = .314)</li>
+  </ol>
+</details>
+
+<details>
+  <summary>Week 12</summary>
+  <ol>
+    <li>Suppose you counted the number of operations required for your algorithm and got 76n^3, where n is the size of the input. If the time it takes on your laptop is T, how long will it take if you double the size of the input? Based on this, what can you say about the complexity class of your algorithm? (The result will be the same no matter what machine you use.)</li>
+    <li>Repeat the above if the number of operations required for your algorithm is 2^n.</li>
+    <li>Find 4 different topological sorts of the graph given in class.</li>
+    <li>If we represent the above graph as a matrix:</li>
+    <ul>
+      <li>How do we detect a vertex with no successor?</li>
+      <li>How do we delete this vertex and all edges adjacent to it?</li>
+    </ul>
+  </ol>
+</details>
+
+<details>
+  <summary>Week 13</summary>
+  <ol>
+    <li>Randomly number the edges of a cube graph using all the weights 1 through 12. Then show all the steps of the Prim algorithm to determine the minimal spanning tree. Show how sets S and T evolve during the solution.</li>
+    <li>Let T = {0.6, 0.1, 0.2, 0.9, 0.8, 0.5, 0.4, 0.7, 0.6, 0.1, 0.2, 0.9, 0.8, 0.5, 0.4, 0.7} and show the packings using simple first fit and first fit decreasing. Can you find a better packing in either case?</li>
+  </ol>
+</details>
